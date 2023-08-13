@@ -1,5 +1,6 @@
 package com.minis.spring.beans;
 
+import com.minis.spring.core.Resource;
 import org.dom4j.Element;
 
 public class XmlBeanDefinitionReader {

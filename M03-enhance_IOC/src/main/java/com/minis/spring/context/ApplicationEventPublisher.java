@@ -1,4 +1,4 @@
-package com.minis.spring.beans;
+package com.minis.spring.context;
 
 
 public interface ApplicationEventPublisher {

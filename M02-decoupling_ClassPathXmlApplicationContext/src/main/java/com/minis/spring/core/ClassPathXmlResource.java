@@ -1,4 +1,4 @@
-package com.minis.spring.beans;
+package com.minis.spring.core;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;

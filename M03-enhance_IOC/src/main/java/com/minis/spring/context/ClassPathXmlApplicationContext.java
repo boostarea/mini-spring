@@ -1,6 +1,13 @@
-package com.minis.spring.beans;
+package com.minis.spring.context;
 
-public class ClassPathXmlApplicationContext extends DefaultSingletonBeanRegistry implements BeanFactory, ApplicationEventPublisher{
+import com.minis.spring.beans.BeanFactory;
+import com.minis.spring.beans.BeansException;
+import com.minis.spring.beans.SimpleBeanFactory;
+import com.minis.spring.beans.XmlBeanDefinitionReader;
+import com.minis.spring.core.ClassPathXmlResource;
+import com.minis.spring.core.Resource;
+
+public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationEventPublisher {
     BeanFactory beanFactory;
     public ClassPathXmlApplicationContext(String fileName) {
         Resource resource = new ClassPathXmlResource(fileName);

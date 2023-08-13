@@ -12,8 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 public class ClassPathXmlApplicationContext {
-    private List<BeanDefinition> beanDefinitions = new ArrayList<BeanDefinition>();
-    private Map<String, Object> singletons = new HashMap<String, Object>();
+    private final List<BeanDefinition> beanDefinitions = new ArrayList<>();
+    private final Map<String, Object> singletons = new HashMap<>();
+
 
     // 构造器获取外部配置，解析出Bean的定义，形成内存映像
     public ClassPathXmlApplicationContext(String fileName) {
@@ -24,13 +25,11 @@ public class ClassPathXmlApplicationContext {
     private void readXml(String fileName) {
         // TODO Auto-generated method stub
         SAXReader saxReader = new SAXReader();
-
         URL xmlPath = this.getClass().getClassLoader().getResource(fileName);
         try {
             Document document = saxReader.read(xmlPath);
             Element rootElement = document.getRootElement();
-
-            for (Element element :(List<Element>) rootElement.elements()) {
+            for (Element element : (List<Element>) rootElement.elements()) {
                 //获取Bean的基本信息
                 String beanID = element.attributeValue("id");
                 String beanClassName = element.attributeValue("class");
@@ -57,6 +56,5 @@ public class ClassPathXmlApplicationContext {
         //这是对外的一个方法，让外部程序从容器中获取Bean实例，会逐步演化成核心方法 public Object getBean(String beanName) {
         return singletons.get(beanName);
     }
-
 
 }
