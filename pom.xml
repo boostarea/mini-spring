@@ -12,7 +12,9 @@
     <modules>
         <module>M01-Init</module>
         <module>M02-decoupling_ClassPathXmlApplicationContext</module>
-        <module>M03-enhance_IOC</module>
+        <module>M03-BeanRegistry</module>
+        <module>M04-primary_DI</module>
+        <module>M05-ref_dependsOn</module>
     </modules>
 
     <properties>
