@@ -15,7 +15,6 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         reader.loadBeanDefinitions(resource);
         this.beanFactory = beanFactory;
-
     }
 
     @Override
@@ -26,11 +25,6 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     @Override
     public Boolean containBean(String name) {
         return this.beanFactory.containBean(name);
-    }
-
-    @Override
-    public void registerBean(String beanName, Object obj) throws BeansException {
-        this.beanFactory.registerBean(beanName, obj);
     }
 
     @Override

@@ -5,8 +5,6 @@ public interface BeanFactory {
 
     Boolean containBean(String name);
 
-    void registerBean(String beanName, Object obj) throws BeansException;
-
 
     boolean isSingleton(String beanName);
 

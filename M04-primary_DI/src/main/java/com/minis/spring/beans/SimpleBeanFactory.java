@@ -42,6 +42,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
         this.beanDefinitionMap.put(name, bd);
         this.beanDefinitionNames.add(name);
         if (!bd.isLazyInit()) {
+            //为下一个循环依赖做准备的
             try {
                 getBean(name);
             } catch (BeansException e) {
