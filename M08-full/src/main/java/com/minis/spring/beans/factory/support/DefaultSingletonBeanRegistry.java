@@ -62,6 +62,7 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 				dependentBeans = new LinkedHashSet<String>(8);
 				this.dependentBeanMap.put(beanName, dependentBeans);
 			}
+			//传值小技巧，先new完put，再改
 			dependentBeans.add(dependentBeanName);
 		}
 		synchronized (this.dependenciesForBeanMap) {

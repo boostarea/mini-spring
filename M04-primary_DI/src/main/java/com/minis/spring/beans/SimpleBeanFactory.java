@@ -133,6 +133,8 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                 PropertyValue propertyValue = propertyValues.getPropertyValueList().get(i);
                 String pName = propertyValue.getName();
                 String pType = propertyValue.getType();
+
+                
                 Object pValue = propertyValue.getValue();
 
                 Class<?>[] paramTypes = new Class<?>[1];

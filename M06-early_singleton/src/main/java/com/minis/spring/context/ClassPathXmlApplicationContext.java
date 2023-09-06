@@ -8,8 +8,8 @@ import com.minis.spring.core.ClassPathXmlResource;
 import com.minis.spring.core.Resource;
 
 public class ClassPathXmlApplicationContext implements BeanFactory {
-//    轻量的静态代理，未影响被代理类主功能
-SimpleBeanFactory beanFactory;
+    //    轻量的静态代理，未影响被代理类主功能
+    SimpleBeanFactory beanFactory;
 
     public ClassPathXmlApplicationContext(String fileName){
         this(fileName, true);
@@ -23,6 +23,7 @@ SimpleBeanFactory beanFactory;
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         reader.loadBeanDefinitions(resource);
         this.beanFactory = beanFactory;
+        //Bean是纠缠在一起的，同时创建，激活整个IoC容器
         if (isRefresh) {
             this.beanFactory.refresh();
         }

@@ -2,7 +2,6 @@ package com.minis.spring.beans.factory.annotation;
 
 import com.minis.spring.beans.BeansException;
 import com.minis.spring.beans.factory.BeanFactory;
-import com.minis.spring.beans.factory.config.AutowireCapableBeanFactory;
 import com.minis.spring.beans.factory.config.BeanPostProcessor;
 
 import java.lang.reflect.Field;
@@ -45,10 +44,6 @@ public class AutowiredAnnotationBeanPostProcessor implements BeanPostProcessor {
 
     public BeanFactory getBeanFactory() {
         return beanFactory;
-    }
-
-    public void setBeanFactory(AutowireCapableBeanFactory beanFactory) {
-        this.beanFactory = beanFactory;
     }
 
     public void setBeanFactory(BeanFactory beanFactory) {
