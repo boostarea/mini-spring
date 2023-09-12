@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans>
-    <bean id="/helloworld" class="com.minis.spring.test.HelloWorldBean" value="doGet"/>
+    <bean id="/helloworld" class="com.minis.spring.test.controller.HelloWorldBean" value="doGet"/>
 </beans>
