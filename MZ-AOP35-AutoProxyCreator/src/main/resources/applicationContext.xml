@@ -13,6 +13,11 @@
     <bean id="baseservice" class="com.minis.spring.ioc_test.BaseService">
     </bean>
 
+    <bean id="autoProxyCreator" class="com.minis.spring.aop.BeanNameAutoProxyCreator" >
+        <property type="String" name="pattern" value="action*" />
+        <property type="String" name="interceptorName" value="advisor" />
+    </bean>
+
     <bean id="webBindingInitializer" class="com.minis.spring.ioc_test.DateInitializer">
     </bean>
 
@@ -47,6 +52,7 @@
 
     <bean id="myInterceptor" class="com.minis.spring.test.aop.TracingInterceptor" />
 
+    <bena id="beforeAdvice" class="com.minis.spring.test.aop.MyBeforeAdvice" />
     <bean id="myBeforeAdvice" class="com.minis.spring.test.aop.MyBeforeAdvice" />
 
     <bean id="advisor" class="com.minis.spring.aop.NameMatchMethodPointcutAdvisor">
@@ -57,8 +63,4 @@
 
     <bean id="action2" class="com.minis.spring.test.aop.Action2" />
 
-    <bean id="autoProxyCreator" class="com.minis.spring.aop.BeanNameAutoProxyCreator" >
-        <property type="String" name="pattern" value="action*" />
-        <property type="String" name="interceptorName" value="advisor" />
-    </bean>
 </beans>

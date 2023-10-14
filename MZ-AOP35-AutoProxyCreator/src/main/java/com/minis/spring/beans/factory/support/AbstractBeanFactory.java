@@ -64,6 +64,8 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
 				//step 3 : postProcessAfterInitialization
 				applyBeanPostProcessorsAfterInitialization(singleton, beanName);
+				this.removeSingleton(beanName);
+				this.registerBean(beanName, singleton);
         	}
 				
         }
